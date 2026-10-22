@@ -1,6 +1,6 @@
 # Awesome-Open-Table-Formats
 
-# Top Open Table Formats Ecosystem
+## Top Open Table Formats Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on ACID Transactions, Schema Evolution & Multi-Engine Interoperability*  
