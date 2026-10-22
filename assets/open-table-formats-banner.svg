@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0d1b2a" />
+      <stop offset="100%" stop-color="#07101e" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8">
+        <animate attributeName="stop-color" values="#38bdf8; #818cf8; #c084fc; #38bdf8" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#818cf8">
+        <animate attributeName="stop-color" values="#818cf8; #c084fc; #38bdf8; #818cf8" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#34d399">
+        <animate attributeName="stop-color" values="#34d399; #38bdf8; #818cf8; #34d399" dur="8s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="gridGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="pillGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.15" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+
+    <!-- CSS Animations -->
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.25; transform: scale(1); }
+        50% { opacity: 0.55; transform: scale(1.08); }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(1.5deg); }
+      }
+      @keyframes floatFast {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-16px) rotate(-2deg); }
+      }
+      @keyframes dashFlow {
+        to { stroke-dashoffset: -100; }
+      }
+      @keyframes waveScan {
+        0% { transform: translateX(-400px); opacity: 0; }
+        40% { opacity: 0.35; }
+        80% { opacity: 0.35; }
+        100% { transform: translateX(1200px); opacity: 0; }
+      }
+      .bg-glow-circle-1 {
+        transform-origin: 200px 100px;
+        animation: pulseGlow 9s ease-in-out infinite;
+      }
+      .bg-glow-circle-2 {
+        transform-origin: 1000px 250px;
+        animation: pulseGlow 11s ease-in-out infinite reverse;
+      }
+      .floating-card-1 {
+        transform-origin: center;
+        animation: floatSlow 7s ease-in-out infinite;
+      }
+      .floating-card-2 {
+        transform-origin: center;
+        animation: floatFast 8.5s ease-in-out infinite;
+      }
+      .stream-line {
+        stroke-dasharray: 8, 8;
+        animation: dashFlow 4s linear infinite;
+      }
+      .scan-light {
+        animation: waveScan 7s linear infinite;
+      }
+      .title-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 900;
+        letter-spacing: -0.5px;
+      }
+      .subtitle-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 500;
+      }
+      .badge-text {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-weight: 600;
+        font-size: 11.5px;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Background Grid & Dynamic Geometric Elements -->
+  <g opacity="0.18">
+    <path d="M0,60 L1200,60 M0,120 L1200,120 M0,180 L1200,180 M0,240 L1200,240 M0,300 L1200,300" stroke="#38bdf8" stroke-width="0.8" />
+    <path d="M120,0 L120,360 M240,0 L240,360 M360,0 L360,360 M480,0 L480,360 M600,0 L600,360 M720,0 L720,360 M840,0 L840,360 M960,0 L960,360 M1080,0 L1080,360" stroke="#38bdf8" stroke-width="0.8" />
+  </g>
+
+  <!-- Ambient Light Orbs (Background Only) -->
+  <circle cx="180" cy="90" r="140" fill="#0284c7" filter="url(#glow)" class="bg-glow-circle-1" />
+  <circle cx="1020" cy="270" r="160" fill="#7c3aed" filter="url(#glow)" class="bg-glow-circle-2" />
+  <circle cx="600" cy="180" r="180" fill="#0ea5e9" opacity="0.1" filter="url(#glow)" />
+
+  <!-- Animated Data Flow Streams in Background -->
+  <path d="M 50 80 Q 300 20 600 80 T 1150 80" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.25" class="stream-line" />
+  <path d="M 50 280 Q 300 340 600 280 T 1150 280" fill="none" stroke="#818cf8" stroke-width="2" opacity="0.25" class="stream-line" />
+
+  <!-- Scanning Light Ray -->
+  <rect x="0" y="0" width="160" height="360" fill="url(#glowGrad)" class="scan-light" opacity="0.2" />
+
+  <!-- Subtle Dynamic Tech Nodes (Flanking Sides - Away From Center Text) -->
+  <!-- Left Side: Lakehouse Architecture Stack -->
+  <g class="floating-card-1" opacity="0.7">
+    <g transform="translate(60, 95)">
+      <rect width="140" height="42" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" opacity="0.8" />
+      <text x="70" y="26" text-anchor="middle" fill="#7dd3fc" font-size="12" font-family="monospace">🧊 Iceberg REST</text>
+    </g>
+    <g transform="translate(40, 150)">
+      <rect width="140" height="42" rx="8" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.2" opacity="0.8" />
+      <text x="70" y="26" text-anchor="middle" fill="#38bdf8" font-size="12" font-family="monospace">⚡ Delta Kernel</text>
+    </g>
+    <g transform="translate(60, 205)">
+      <rect width="140" height="42" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2" opacity="0.8" />
+      <text x="70" y="26" text-anchor="middle" fill="#fcd34d" font-size="12" font-family="monospace">🔥 Hudi Timeline</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Engine Compatibility Nodes -->
+  <g class="floating-card-2" opacity="0.7">
+    <g transform="translate(1000, 95)">
+      <rect width="140" height="42" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="1.2" opacity="0.8" />
+      <text x="70" y="26" text-anchor="middle" fill="#f472b6" font-size="12" font-family="monospace">🚀 Apache Spark</text>
+    </g>
+    <g transform="translate(1020, 150)">
+      <rect width="140" height="42" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.2" opacity="0.8" />
+      <text x="70" y="26" text-anchor="middle" fill="#c084fc" font-size="12" font-family="monospace">🔮 Trino Engine</text>
+    </g>
+    <g transform="translate(1000, 205)">
+      <rect width="140" height="42" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.2" opacity="0.8" />
+      <text x="70" y="26" text-anchor="middle" fill="#6ee7b7" font-size="12" font-family="monospace">🌊 Apache Flink</text>
+    </g>
+  </g>
+
+  <!-- Central Dark Glass Card Container for Foreground Stability -->
+  <rect x="220" y="45" width="760" height="268" rx="20" fill="#0b1329" fill-opacity="0.88" stroke="#1e293b" stroke-width="1.5" filter="url(#subtleShadow)" />
+
+  <!-- Outer Neon Glow Border for Central Container -->
+  <rect x="220" y="45" width="760" height="268" rx="20" fill="none" stroke="url(#textGrad)" stroke-width="1.2" opacity="0.4" />
+
+  <!-- FOREGROUND CONTENT: Strictly Protected from Overlap -->
+  <!-- Top Category Tag -->
+  <g transform="translate(600, 85)">
+    <rect x="-135" y="-14" width="270" height="28" rx="14" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1" />
+    <circle cx="-112" cy="0" r="4" fill="#38bdf8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="6" y="4" text-anchor="middle" fill="#93c5fd" class="badge-text" letter-spacing="1.2">CURATED ECOSYSTEM DIRECTORY</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="600" y="152" text-anchor="middle" fill="url(#textGrad)" font-size="44" class="title-text" filter="url(#glow)">
+    Awesome Open Table Formats
+  </text>
+  <text x="600" y="152" text-anchor="middle" fill="url(#textGrad)" font-size="44" class="title-text">
+    Awesome Open Table Formats
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="196" text-anchor="middle" fill="#94a3b8" font-size="15.5" class="subtitle-text" letter-spacing="0.3">
+    Architecting the Open Lakehouse: ACID Guarantees, Schema Evolution &amp; Multi-Engine Freedom
+  </text>
+
+  <!-- Feature Pills in Foreground -->
+  <g transform="translate(600, 248)">
+    <!-- Pill 1: Iceberg -->
+    <g transform="translate(-270, 0)">
+      <rect x="-65" y="-16" width="130" height="32" rx="16" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" />
+      <text x="0" y="5" text-anchor="middle" fill="#e0f2fe" class="badge-text">🧊 Iceberg</text>
+    </g>
+    <!-- Pill 2: Delta Lake -->
+    <g transform="translate(-135, 0)">
+      <rect x="-60" y="-16" width="120" height="32" rx="16" fill="#1e293b" stroke="#0ea5e9" stroke-width="1.2" />
+      <text x="0" y="5" text-anchor="middle" fill="#e0f2fe" class="badge-text">⚡ Delta Lake</text>
+    </g>
+    <!-- Pill 3: Apache Hudi -->
+    <g transform="translate(0, 0)">
+      <rect x="-55" y="-16" width="110" height="32" rx="16" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2" />
+      <text x="0" y="5" text-anchor="middle" fill="#fef3c7" class="badge-text">🔥 Hudi</text>
+    </g>
+    <!-- Pill 4: Apache Paimon -->
+    <g transform="translate(130, 0)">
+      <rect x="-60" y="-16" width="120" height="32" rx="16" fill="#1e293b" stroke="#10b981" stroke-width="1.2" />
+      <text x="0" y="5" text-anchor="middle" fill="#d1fae5" class="badge-text">🌊 Paimon</text>
+    </g>
+    <!-- Pill 5: Apache XTable -->
+    <g transform="translate(265, 0)">
+      <rect x="-60" y="-16" width="120" height="32" rx="16" fill="#1e293b" stroke="#a855f7" stroke-width="1.2" />
+      <text x="0" y="5" text-anchor="middle" fill="#f3e8ff" class="badge-text">🔄 XTable</text>
+    </g>
+  </g>
+
+  <!-- Subtle Bottom Accent Line -->
+  <line x1="300" y1="288" x2="900" y2="288" stroke="url(#textGrad)" stroke-width="1.5" stroke-opacity="0.4" />
+</svg>
