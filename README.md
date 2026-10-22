@@ -81,7 +81,7 @@ The following hosted platforms provide fully managed lakehouse architectures, au
 Explore the leading open-source table format specifications, standalone execution kernels, metadata catalogs, and translation bridges.
 
 > [!TIP]
-> Projects are strictly sorted in descending order by **GitHub Star Count**. Star count badges reflect live repository stargazers.
+> Projects are strictly sorted in descending order by **GitHub Stars_Count**. Stars_Count badges reflect live repository stargazers.
 
 ### 1. [Apache Iceberg](https://github.com/apache/iceberg) [![Stars](https://img.shields.io/github/stars/apache/iceberg?style=social&color=white)](https://github.com/apache/iceberg/stargazers)
 - 📌 **Overview**: The open industry standard for multi-engine table interoperability, governed neutrally under the Apache Software Foundation.
